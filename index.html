@@ -29,18 +29,65 @@
         <nav id="nav-bar">
           <div id="logo">
             <a href="index.html">
-              <img id="white-nav-logo" src="assets/images/logo/logo.svg" alt="Oxigen HQ logo in white, on click navigates user to home page" height="50" />
+              <img id="white-nav-logo" src="assets/img/logo/logo_white.png" alt="Oxigen HQ logo in white, on click navigates user to home page." />
             </a>
           </div>
           <!-- End Navigation Bar -->
+
+          <nav id="mobile-nav">
+            <!-- Navigation Menu -->
+            <ul id="nav-menu" class="menu" tabindex="-1" aria-label="main navigation" hidden="">
+              <li>
+                <a href="/" class="nav-link">Semi-Private Coaching</a>
+              </li>
+              <li>
+                <a href="/" class="nav-link">Online Coaching</a>
+              </li>
+            </ul>
+            <!-- End Navigation Menu -->
+
+            <!-- Mobile Navigation Menu -->
+            <ul id="mobile-nav-menu" class="menu" tabindex="-1" aria-label="mobile navigation" hidden="">
+              <li class="nav-item">
+                <a href="/" class="mobile-nav-link">Semi-Private Coaching</a>
+              </li>
+              <li class="nav-item">
+                <a href="/" class="mobile-nav-link">Online Coaching</a>
+              </li>
+            </ul>
+            <!-- End Navigation Menu -->
+
+            <!-- Menu Toggle Button -->
+            <a href="#nav" id="nav-toggle" role="button" aria-expanded="false" aria-controls="menu">
+              <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                <title>Toggle Menu</title>
+                <g>
+                  <line class="menuicon-bar" x1="13" y1="16.5" x2="37" y2="16.5" />
+                  <line class="menuicon-bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                  <line class="menuicon-bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                  <line class="menuicon-bar" x1="13" y1="32.5" x2="37" y2="32.5" />
+                  <circle class="menuicon-circle" r="23" cx="25" cy="25" />
+                </g>
+              </svg>
+            </a>
+            <!-- End Menu Toggle Button -->
+
+            <!-- Background Splash -->
+            <div id="splash"></div>
+            <!-- End Background Splash -->
+          </nav>
         </nav>
       </div>
     </header>
     <!-- Hero Section -->
     <section>
       <div id="hero-logo">
-        <img src="assets/images/logo/text-logo-white.png" alt="PD Fitness text logo" />
-        <a class="button" href="contact.html">Join Now</a>
+        <img src="assets/img/logo/logo.png" alt="Oxigen HQ Logo in white and red." />
+        <h2 id="location">Private Exclusive Gym In Tralee, Co. Kerry
+        <div id="coaching-options">
+          <a class="button" href="/">Semi-Private Coaching</a>
+          <a class="button" href="/">Online Coaching</a>
+        </div>
       </div>
     </section>
     <!-- End Hero Section -->
