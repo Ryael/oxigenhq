@@ -8,25 +8,20 @@ const menuLinks = navMenu.querySelectorAll(".nav-link");
 const whiteLogo = myNav.querySelector("#white-nav-logo");
 const blackLogo = myNav.querySelector("#black-nav-logo");
 const logoContainer = myNav.querySelector("#logo");
-const activeNavLink = myNav.querySelector(".active")
 let isMenuOpen = false;
 
 /* Navigation Bar */
 
 function setSolidNavbar() {
-  myNav.classList.remove("scroll");
   whiteLogo.classList.remove("transparent");
   blackLogo.classList.add("transparent");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.remove("black"));
-  activeNavLink.classList.remove("underlined");
 }
 
 function setTransparentNavbar() {
-  myNav.classList.add("scroll");
   whiteLogo.classList.add("transparent");
   blackLogo.classList.remove("transparent");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.add("black"));
-  activeNavLink.classList.add("underlined");
 }
 
 /* Mobile Menu */
