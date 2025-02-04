@@ -55,7 +55,6 @@ html {
 }
 
 #nav-menu > li {
-  font-family: Open Sans, sans-serif;
   overflow: hidden;
   padding: 10px 15px;
   z-index: inherit;
