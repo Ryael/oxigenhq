@@ -2,26 +2,49 @@
 
 const myNav = document.querySelector("#nav-bar");
 const mobileNav = document.querySelector("#mobile-nav");
-const navMenu = document.querySelector("#nav-menu");
+const navMenu = document.querySelector("#nav-items");
 const menuToggle = document.querySelector("#nav-toggle");
 const menuLinks = navMenu.querySelectorAll(".nav-link");
 const whiteLogo = myNav.querySelector("#white-nav-logo");
 const blackLogo = myNav.querySelector("#black-nav-logo");
 const logoContainer = myNav.querySelector("#logo");
+const activeNavLink = myNav.querySelector(".active");
 let isMenuOpen = false;
 
 /* Navigation Bar */
 
+// Sticky navigation bar.
+// These changes are toggled whenever the 10px threshold is scrolled past.
+window.onload = () => {
+  setNavbarTransparency();
+};
+
+window.onscroll = () => {
+  setNavbarTransparency();
+}
+
+function setNavbarTransparency() {
+  if (this.scrollY <= 10) {
+    setSolidNavbar();
+  } else {
+    setTransparentNavbar();
+  }
+}
+
 function setSolidNavbar() {
+  myNav.classList.remove("scroll");
   whiteLogo.classList.remove("transparent");
   blackLogo.classList.add("transparent");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.remove("black"));
+  activeNavLink.classList.remove("underlined");
 }
 
 function setTransparentNavbar() {
+  myNav.classList.add("scroll");
   whiteLogo.classList.add("transparent");
   blackLogo.classList.remove("transparent");
   Array.from(menuLinks).forEach(menuLink => menuLink.classList.add("black"));
+  activeNavLink.classList.add("underlined");
 }
 
 /* Mobile Menu */
