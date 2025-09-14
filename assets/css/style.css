@@ -1,8 +1,19 @@
-/* Fonts */
+/* Table of Contents */
+
+/* 01. Fonts */
+/* 02. Common Styles */
+/* 03. Navigation */
+/* 04. Hero */
+/* 05. Buttons */
+/* 06. Membership */
+/* 07. Class Schedule */
+/* 08. Media Queries */
+
+/* 01. Fonts */
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;800&family=Raleway:wght@300;400;700&family=Dosis:wght@200..800&Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-/* Common */
+/* 02. Common Styles */
 
 * {
   margin: 0;
@@ -24,9 +35,27 @@ html {
   font-weight: 900;
 }
 
-/* Headings */
+.underlined {
+  border-bottom: 1px solid #c4262e;
+  color: #c4262e;
+  padding-bottom: 3px;
+  transition: 0.3s ease-in-out;
+}
 
-/* Navigation Bar and Logo */
+.section {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-sizing: border-box;
+  padding: 100px 0px;
+}
+
+/* 03. Navigation */
 
 #nav-bar {
   display: flex;
@@ -85,7 +114,7 @@ html {
   color: #fff;
   transition: 0.3s ease-in-out;
 }
-
+.nav-link.black:hover
 .nav-link:not(:hover),
 .nav-link:not(:active) {
   transition: 0.3s ease-in-out;
@@ -162,9 +191,9 @@ html {
 
 #black-nav-logo {
   height: 35px;
-  opacity: 0;
 }
 
+#black-nav-logo.transparent,
 #white-nav-logo.transparent {
   opacity: 0;
   transition:opacity 0.5s ease-in-out;
@@ -194,7 +223,7 @@ html {
   list-style-type: none;
 }
 
-#nav-icons li,
+#nav-items .nav-icon,
 #mobile-nav-icons a {
   width: 34px;
   height: 34px;
@@ -204,26 +233,40 @@ html {
   display: inline-block;
   border: 1px solid rgba(255,255,255, .2);
   border-radius: 50%;
-  color: #dcdcdc;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
-#nav-icons li a {
-  color: inherit;
-}
-
-#nav-icons li:hover {
-  border: 1px solid rgba(255,255,255, .4);
-  color: #fff;
+ #nav-items .nav-link.black .nav-icon {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
   transition: 0.3s ease-in-out;
 }
 
-#nav-icons li:first-child {
+#nav-items #nav-icons .nav-link {
+  font-size: 12.5px;
+  letter-spacing: 0;
+}
+
+#nav-items .nav-icon:hover {
+  border: 1px solid rgba(255,255,255, .4);
+  transition: 0.3s ease-in-out;
+}
+
+ #nav-icons .nav-link.black::after {
+  display: none;
+ }
+
+ #nav-items .nav-link.black .nav-icon:hover {
+  border: 1px solid rgba(0, 0 , 0, 1);
+  transition: 0.3s ease-in-out;
+ }
+
+#nav-icons a:first-child {
   margin-right: 7.5px;
 }
 
-/* Hero Section */
+/* 04. Hero */
 
 #hero-image {
   height: 100vh;
@@ -231,6 +274,39 @@ html {
   background: linear-gradient(rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../img/hero/hero.jpg") no-repeat center center;
   background-size: cover;
   z-index: 0;
+}
+
+#hero-image-small {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), url("../img/hero/hero.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: 50% 39%;
+  z-index: 0;
+}
+
+#location {
+  position: absolute;
+  height: 40vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 0;
+}
+
+#location h1 {
+  font-family: Dosis;
+  color: #dcdcdc;
+  font-size: 350%;
+  letter-spacing: 25px;
+  font-weight: 400;
+  z-index: 0;
+  text-transform: uppercase;
 }
 
 #hero-logo {
@@ -264,7 +340,7 @@ html {
   z-index: 0;
 }
 
-#location {
+#hero-location {
   text-align: center;
   margin-bottom: 15px;
   color: rgba(255,255,255, .7);
@@ -276,10 +352,6 @@ html {
   opacity: 1;
   font-family: Dosis, arial, sans-serif;
   text-transform: uppercase;
-}
-
-#coaching-options {
-  margin-top: 15px;
 }
 
 #hero-logo ul {
@@ -317,7 +389,7 @@ html {
   left: 0;
 }
 
-/* Buttons */
+/* 05. Buttons */
 
 button {
   cursor: pointer;
@@ -352,9 +424,255 @@ button {
   transition: 0.5s ease-in-out;
 }
 
-/* Mobile Menu Queries */
+.button-dark {
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  background: #424242;
+  border: 2px solid transparent;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
 
-@media (max-width: 768px) {
+button-dark:not(:hover), .button-dark:not(:focus) {
+  transition: 0.5s ease-in-out;
+}
+
+.button-dark:hover, .button-dark:focus {
+  color: #fff;
+}
+
+/* 06. Membership */
+
+#membership {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+}
+
+#membership .text-title,
+.text-title {
+  margin: 0px 0 50px 0px;
+  color: #595959;
+  display: flex;
+  text-transform: none;
+  font-family: var(--font);
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 300;
+  letter-spacing: 0;
+  justify-content: center;
+}
+
+#membership-comparisons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.pricing-plan {
+  box-sizing: border-box;
+}
+
+.pricing-type-inner {
+  border: 1px solid #AAA;
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.pricing-type-inner:hover {
+  border-color: #555;
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.pricing-wrap {
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px 30px;
+  overflow: hidden;
+}
+
+.font-icon {
+  padding: 10px 0 10px 0;
+  position: relative;
+  font-size: 32px;
+  z-index: 1;
+  color: #3C3C3C;
+}
+
+.pricing-title {
+  position: relative;
+  margin-bottom: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  z-index: 1;
+  color: #111;
+  font-family: Raleway;
+}
+
+.pricing-features {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.pricing-list {
+  margin: 0 -20px 19px;
+  padding: 0;
+  color: #8F8F8F;
+  font-size: 12.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: Raleway;
+  line-height: 20px;
+}
+
+.pricing-list li:first-child {
+  border-top: 1px solid #f1f1f1;
+}
+
+.pricing-list li {
+  padding: 12px 20px;
+  list-style: none;
+  border-bottom: 1px solid #f1f1f1;
+  letter-spacing: 1px;
+}
+
+.pricing-button {
+  margin: 30px -20px 0;
+  padding-top: 30px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.pricing-button .button-dark {
+  font-size: 11px;
+  padding: 7.5px 21px;
+}
+
+.pricing-days {
+  font-size: 22px;
+  font-weight: 300;
+  padding-bottom: 5px;
+  color: #3C3C3C;
+}
+
+.pricing-per-week {
+  font-weight: 300;
+  line-height: 1;
+  text-transform: lowercase;
+  color: #8F8F8F;
+  font-size: 14px;
+}
+
+/* 07. Class Schedule */
+
+.class-schedule {
+  display: grid;
+  justify-content: center;
+  list-style: none;
+  grid-template-columns: 250px 250px 250px;
+  gap: 25px;
+}
+
+.class {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #AAA;
+  padding: 25px;
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.class:hover {
+  border-color: #555;
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+
+.class .font-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.class-title {
+  text-align: center;
+  height: 60px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.class-title h3 {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  z-index: 1;
+  color: #111;
+  font-family: Raleway;
+  width: 185px;
+}
+
+.class-times {
+  height: fit-content;
+}
+
+.class-details {
+  list-style: none;
+  max-width: 250px;
+}
+
+.class-details li {
+  padding: 10px;
+  border-bottom: 1px dashed #ccc;
+  color: rgba(143, 143, 143, 1);
+  font-size: 12.5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Raleway;
+  line-height: 20px;
+  background: rgba(233, 233, 233, 0);
+  transition:background 0.3s ease-in-out;
+}
+
+.class-details li:hover {
+  background: rgba(233, 233, 233, 0.5);
+  transition:background 0.3s ease-in-out;
+}
+
+.class-details li a {
+  text-decoration: none;
+  color: #444;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.class-time {
+  font-size: 14px;
+  color: #c4262e;
+}
+
+/* 08. Mobile Queries */
+
+@media (max-width: 1220px) {
+  #membership-comparisons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 990px) {
 
   #nav-menu {
     display: none;
@@ -605,17 +923,61 @@ button {
     height: 10%;
   }
 
-  #coaching-options {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  #nav-bar.scroll {
+    box-shadow: none;
   }
 
+  .class-schedule {
+    grid-template-columns: 250px 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-image-small,
+  #location {
+    height: 30vh;
+  }
+
+  #location > h1 {
+    font-size: 180%;
+    letter-spacing: 15px;
+  }
+
+  #membership-comparisons {
+    grid-template-columns: 1fr;
+  }
+
+  .column-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 641px) {
+  .class-schedule {
+    grid-template-columns: 250px;
+  }
 }
 
 @media (max-width: 600px) {
   #hero-logo ul {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-logo > h1 {
+    width: 70%;
+    text-align: center;
+  }
+
+  #hero-image-small,
+  #location {
+    height: 20vh;
+  }
+
+  #location > h1 {
+    font-size: 130%;
+    letter-spacing: 15px;
   }
 }
 
