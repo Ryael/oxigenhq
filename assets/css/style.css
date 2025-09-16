@@ -55,6 +55,20 @@ html {
   padding: 100px 0px;
 }
 
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0
+  }
+  to {
+    opacity:1
+  }
+}
+
 /* 03. Navigation */
 
 #nav-bar {
@@ -921,6 +935,7 @@ button-dark:not(:hover), .button-dark:not(:focus) {
 
   #hero-logo img {
     height: 10%;
+    padding-bottom: 12.5px;
   }
 
   #nav-bar.scroll {
